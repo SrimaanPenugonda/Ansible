@@ -1,0 +1,23 @@
+Problems with shell scripting
+shell scripting is  Imperative
+Ansible is declarative
+    user sample - to add sample - this will check the OS , version all and add the user irrespective of
+    user add command
+Shell Scripting works on one operating system
+    Ansible can work on any operating system - Heterogeneous
+Shell scripting is sequential
+    Ansible is parallel operations
+Shell Script code has to be locally available
+
+Configuration Management Tools
+    Puppet,Ansible etc
+
+Ansible -
+    Declarative
+    Heterogeneous
+    Parallel operations
+    Not be on the local sever
+Ansible is better tool than puppet
+
+
+
