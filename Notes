@@ -28,6 +28,16 @@ INVENTORY-
     List of servers managed by ansible has to provided with file inventory
     LIST OF SERVERS mentioned here- hostnames,ip addresses
     best practice - dev,prod diff inventory files
+    inv - inventory file with instance private ip address
+    ansible -i inv all -u centos -k -m ansible.builtin.ping - to check the ping to above instance
+    this for 2.10 version , below 2.10 simple give 'ping'
+    export ANSIBLE_HOST_KEY_CHECKING=False - error solution
+
+Just for INFO
+to install java on shell in that instance
+    ansible -i inv all -u centos -k -m ansible.builtin.shell -a "sudo yum install java -y"
+ansible.builtin.ping
+ansible.builtin.shell - collections in ansible
 
 
 
