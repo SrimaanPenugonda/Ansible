@@ -1,3 +1,4 @@
+S30:
 Problems with shell scripting
 shell scripting is  Imperative
 Ansible is declarative
@@ -18,6 +19,17 @@ Ansible -
     Parallel operations
     Not be on the local sever
 Ansible is better tool than puppet
+
+Diff B/W Pull and Push
+Ansible - push the command to node (push- primary, pull - second)
+Chef and puppet - pull mechanism - pull the info from nodes and give commands
+
+INVENTORY-
+    List of servers managed by ansible has to provided with file inventory
+    LIST OF SERVERS mentioned here- hostnames,ip addresses
+    best practice - dev,prod diff inventory files
+
+
 
 
 
