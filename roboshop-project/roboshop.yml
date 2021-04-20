@@ -5,5 +5,5 @@
       import_role:
         name: cart
     - name: Load Catalogue Role
-        import_role:
-          name: catalogue
+      import_role:
+        name: catalogue
