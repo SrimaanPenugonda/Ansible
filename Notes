@@ -30,7 +30,7 @@ INVENTORY-
     best practice - dev,prod diff inventory files
     inv - inventory file with instance private ip address
     ansible -i inv all -u centos -k -m ansible.builtin.ping - to check the ping to above instance
-    this for 2.10 version , below 2.10 simple give 'ping'
+    this for 2.10 version , below 2.10 version simply give 'ping'
     export ANSIBLE_HOST_KEY_CHECKING=False - error solution
 
 Just for INFO
@@ -58,7 +58,7 @@ Creating Play book
 01-print.yml
 1.use proper indentation
 2.tasks are the list of activities perform one by one
-3.debug is called as collection until 2.9 now in 2.19 its called as ansible.builtin.debug
+3.debug is called as module until 2.9 now in 2.10 its called as ansible.builtin.debug (collection)
 4.name key is optional and benefits only to understand whats gng in command o/p
 5.hosts key is mandatory and tasks/roles also mandatory
 
@@ -70,5 +70,13 @@ Variables:
 5.local>>vars_files>>global
 6.vars_prompt -which will ask for variable in CLI
 7. pass variables by -e URL=www.cmd.com -  this will replace all URL variables
+8. CLI variables with -e option have high precedence
+
+# Things to explore.
+# 1. We can define variables in inventory file also, Explore this option.
+
+Runtime variables :
+check the 03-runtime
+
 
 
