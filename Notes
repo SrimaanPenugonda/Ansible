@@ -61,6 +61,7 @@ Creating Play book
 3.debug is called as collection until 2.9 now in 2.19 its called as ansible.builtin.debug
 4.name key is optional and benefits only to understand whats gng in command o/p
 5.hosts key is mandatory and tasks/roles also mandatory
+
 Variables:
 1.vars declared at play level can access by any task in the play
 2.one play variable cant be accessed by another play by default

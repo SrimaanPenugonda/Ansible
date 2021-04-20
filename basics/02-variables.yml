@@ -2,11 +2,10 @@
   hosts: all
   vars:
     URL: www.sample.com #This is global variable
-  tasks:
-    - name: Print the global variable
+  tasks: #tasks start from here
+    - name: Print the global variable #task1
       ansible.builtin.debug:
         msg: Hello {{URL}}
-
     - name: Print the variable again
       ansible.builtin.debug:
         msg: Hello {{URL}}
@@ -14,5 +13,16 @@
       ansible.builtin.debug:
         msg: Hello {{URL}}
       vars:
-        URL: www.google.com
+        URL: www.google.com #This is Local variable which has high precedence
 
+
+- name: Demo on variables from file
+  hosts: all
+  vars_files:
+    - vars.yml
+  vars:
+    URL: www.sample1.com
+  tasks:
+    - name: Print Variable
+      ansible.builtin.debug:
+        msg: Hello {{URL}}
