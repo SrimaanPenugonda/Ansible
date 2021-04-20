@@ -10,7 +10,7 @@
     - name: Print the variable again
       ansible.builtin.debug:
         msg: Hello {{URL}}
-    -name: Print the Local Variable
+    - name: Print the Local Variable
       ansible.builtin.debug:
         msg: Hello {{URL}}
       vars:
