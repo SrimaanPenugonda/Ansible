@@ -12,5 +12,6 @@
       when: component == "catalogue"  #variables in inventory file
 
     - name: Load Frontend Role
-       - frontned
+      import_role:
+       name: frontned
       when: component == "catalogue"
