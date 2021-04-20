@@ -13,5 +13,5 @@
 
     - name: Load Frontend Role
       import_role:
-       name: frontned
+       name: frontend
       when: component == "catalogue"
