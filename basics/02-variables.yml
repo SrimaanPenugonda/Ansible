@@ -1,0 +1,18 @@
+- name: Demo on variables
+  hosts: all
+  vars:
+    URL: www.sample.com #This is global variable
+  tasks:
+    - name: Print the global variable
+      ansible.builtin.debug:
+        msg: Hello {{URL}}
+
+    - name: Print the variable again
+      ansible.builtin.debug:
+        msg: Hello {{URL}}
+    -name: Print the Local Variable
+      ansible.builtin.debug:
+        msg: Hello {{URL}}
+      vars:
+        URL: www.google.com
+
