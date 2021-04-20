@@ -38,7 +38,20 @@ to install java on shell in that instance
     ansible -i inv all -u centos -k -m ansible.builtin.shell -a "sudo yum install java -y"
 ansible.builtin.ping
 ansible.builtin.shell - collections in ansible
+ansible -i inv all -u centos -m ansible.builtin.shell -a "hostname" -e "ansible_password=DevOps321"
+    without asking pwd -> remove -k
+KEYS:
+    ssh keygen -f devops -> create keypair in devops direc
 
+
+Ansible PLAYBOOK - YAML Language used
+    hosts:all
+    tasks:
+      name:Print Hello
+
+
+  ansible -i inv all -u centos --private-key=./devops -m ansible.builtin.ping - added keypair
+  in workstation and ping the other node1 instance directly here
 
 
 
