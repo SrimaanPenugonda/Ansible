@@ -4,6 +4,13 @@
     - name: Load Cart Role
       import_role:
         name: cart
+      when: component == "cart"
+
     - name: Load Catalogue Role
       import_role:
         name: catalogue
+      when: component == "catalogue"  #variables in inventory file
+
+    - name: Load Frontend Role
+       - frontned
+      when: component == "catalogue"
