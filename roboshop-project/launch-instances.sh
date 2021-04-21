@@ -43,7 +43,7 @@ else
              done
          ;;
          routes)
-           echo "updating routes"
+           echo "updating $2 routes"
            for component in $2;do
              echo "create A record for ${component}"
              IP=$(aws ec2 describe-instances --filters Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq \
@@ -53,7 +53,7 @@ else
              done
            ;;
          terminate)
-           echo "terminating instances"
+           echo "terminating $2 instances"
            for component in $2;do
              echo "terminating ${component} instance"
              # shellcheck disable=SC2046
