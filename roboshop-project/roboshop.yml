@@ -1,32 +1,33 @@
 - name: Setup Roboshop Project
   hosts: all
+  become: yes  #acts as sudo user ,it can be mention at task level also
   tasks:
-    - name: Load Frontend Role
-      import_role:
-        name: frontend
-      when: component == "frontend"
+#    - name: Load Frontend Role
+#        name: frontend
+#        import_role:
+#        when: component == "frontend"
 
     - name: Load Cart Role
       import_role:
         name: cart
       when: component == "cart"
 
-    - name: Load Catalogue Role
-      import_role:
-        name: catalogue
-      when: component == "catalogue"  #variables in inventory file
-
-    - name: Load User Role
-      import_role:
-        name: user
-      when: component == "user"
-
-    - name: Load shipping Role
-      import_role:
-        name: shipping
-      when: component == "shipping"
-
-    - name: Load Payment Role
-      import_role:
-        name: payment
-      when: component == "payment"
+#    - name: Load Catalogue Role
+#      import_role:
+#        name: catalogue
+#      when: component == "catalogue"  #variables in inventory file
+#
+#    - name: Load User Role
+#      import_role:
+#        name: user
+#      when: component == "user"
+#
+#    - name: Load shipping Role
+#      import_role:
+#        name: shipping
+#      when: component == "shipping"
+#
+#    - name: Load Payment Role
+#      import_role:
+#        name: payment
+#      when: component == "payment"

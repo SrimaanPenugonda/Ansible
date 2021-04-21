@@ -1,0 +1,14 @@
+S32:
+1 Created Roles for each component - car,frontend etc..
+2.roboshop.yml - playbook with tasks executing each role one by one
+3. mention node ip/adress in inventiry file with variable declared - to diff ip/add for each component
+4.launch instances for each component - modified launch-instance script added $2 argument
+    -z check for string has data or not ,exist or not
+5.make-inventory - get the ip address for each component and write to inventory file as below
+    172.88.99.99 component=user
+    -n - do only when string has data, or exits
+6. start the cart service code -
+    add the code to setup the cart,i.e. all components
+7.import_role vs include_role
+    import_role - defined for playbook
+    include_role - defined for inside role

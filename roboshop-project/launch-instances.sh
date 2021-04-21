@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Managing roboshop project servers"
-if [ -z "$2" ]; then
+if [ -z "$2" ]; then  #-z check for value exist or not
    case $1 in
            launch)
              echo "launching 10 instances"

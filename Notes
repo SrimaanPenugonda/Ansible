@@ -71,6 +71,7 @@ Variables:
 6.vars_prompt -which will ask for variable in CLI
 7. pass variables by -e URL=www.cmd.com -  this will replace all URL variables
 8. CLI variables with -e option have high precedence
+9.msg: {{URL}} - access the variable by {{}}
 
 # Things to explore.
 # 1. We can define variables in inventory file also, Explore this option.
