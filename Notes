@@ -78,7 +78,8 @@ Variables:
 Runtime variables :
 check the 03-runtime
 
-
+Conditions:
+When: component = "user"
 
 
 
