@@ -35,7 +35,7 @@ if [ -z "$2" ]; then
 else
        case $1 in
            launch)
-             echo "launching 10 instances"
+             echo "launching $2 instances"
              for component in $2;do
               echo "Launch ${component} spot instance"
               aws ec2 run-instances --launch-template LaunchTemplateId=lt-0abcc8f4257b802e3 --tag-specifications \
