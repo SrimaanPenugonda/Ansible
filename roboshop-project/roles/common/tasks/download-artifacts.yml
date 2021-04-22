@@ -1,0 +1,14 @@
+- name: Delete {{COMPONENT}} directory if it exist
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: absent
+- name: Cretae {{COMPONENT}} directory
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: directory
+    become_user: roboshop
+- name: Download and Unarchive {{COMPONENT}} zip file
+  ansible.builtin.unarchive:
+    src: "{{ARTIFACT_ZIP_URL}}"
+    dest: /usr/local/bin
+    remote_src: yes
