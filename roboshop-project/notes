@@ -12,3 +12,5 @@ S32:
 7.import_role vs include_role
     import_role - defined for playbook
     include_role - defined for inside role
+8.include_tasks - call other tasks in that role
+9.become_user: root or roboshop
