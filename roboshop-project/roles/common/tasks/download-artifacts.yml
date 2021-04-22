@@ -10,5 +10,5 @@
 - name: Download and Unarchive {{COMPONENT}} zip file
   ansible.builtin.unarchive:
     src: "{{ARTIFACT_ZIP_URL}}"
-    dest: /usr/local/bin
+    dest: /home/roboshop/{{COMPONENT}}
     remote_src: yes
