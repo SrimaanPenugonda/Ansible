@@ -30,10 +30,12 @@
       tags:
         - user
 #
-#    - name: Load shipping Role
-#      import_role:
-#        name: shipping
-#      when: component == "shipping"
+    - name: Load shipping Role
+      import_role:
+        name: shipping
+      when: component == "shipping"
+      tags:
+        - shipping
 #
 #    - name: Load Payment Role
 #      import_role:
