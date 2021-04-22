@@ -1,0 +1,24 @@
+- name: Component name
+  debug:
+    msg: shipping
+- name: Install maven Packages
+  yum:
+    name:
+      - maven
+    state: present
+
+- name: Create Application User
+  user:
+    name: roboshop # no need to check user exits or not..Ansible just take it as command declarative and do
+
+- name: Download the artifacts
+  include_tasks: download-artifacts.yml # this include other task in common role
+
+- name: Compile & Build Package
+  shell:
+    chdir: /home/roboshop/{{COMPONENT}}
+    cmd: mvn clean package
+  become_user: roboshop
+
+- name: Update Systemd.service file
+  include_tasks: systemd-setup.yml
