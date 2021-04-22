@@ -19,10 +19,10 @@
         name: catalogue
       when: component == "catalogue"  #variables in inventory file
 #
-#    - name: Load User Role
-#      import_role:
-#        name: user
-#      when: component == "user"
+    - name: Load User Role
+      import_role:
+        name: user
+      when: component == "user"
 #
 #    - name: Load shipping Role
 #      import_role:
