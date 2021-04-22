@@ -13,16 +13,22 @@
       import_role: # this is playbook so to import role use import_role
         name: cart
       when: component == "cart"
+      tags:
+        - cart
 
     - name: Load Catalogue Role
       import_role:
         name: catalogue
       when: component == "catalogue"  #variables in inventory file
+      tags:
+        - catalogue
 #
     - name: Load User Role
       import_role:
         name: user
       when: component == "user"
+      tags:
+        - user
 #
 #    - name: Load shipping Role
 #      import_role:
