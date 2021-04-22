@@ -1,5 +1,7 @@
 - name: Setup Roboshop Project
   hosts: all
+  vars:
+    domain: devopssri.ml
   become: yes  #acts as sudo user ,it can be mention at task level also
   tasks:
 #    - name: Load Frontend Role
