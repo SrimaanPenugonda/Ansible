@@ -37,7 +37,9 @@
       tags:
         - shipping
 #
-#    - name: Load Payment Role
-#      import_role:
-#        name: payment
-#      when: component == "payment"
+    - name: Load Payment Role
+      import_role:
+        name: payment
+      when: component == "payment"
+      tags:
+        - payment
