@@ -4,4 +4,8 @@
     - name: copy sample.txt file
       copy:
         src: sample.txt
+        dest: /tmp/sample.txt #it wont copy the variable URL value
+    - name: template to copy sample.txt file
+      template:
+        src: sample.txt
         dest: /tmp/sample.txt
