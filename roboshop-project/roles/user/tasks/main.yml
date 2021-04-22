@@ -1,0 +1,4 @@
+- name: Include Common role
+  include_role:  #this is command to include role in a role
+    name: common
+    tasks_from: nodejs
