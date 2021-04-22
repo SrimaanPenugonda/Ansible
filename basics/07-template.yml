@@ -1,5 +1,7 @@
 - name: Demo on Template
   hosts: all
+  vars:
+    URL: template.com
   tasks:
     - name: copy sample.txt file
       copy:
