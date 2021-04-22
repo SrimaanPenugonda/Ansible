@@ -1,6 +1,6 @@
 - name: Component name
   debug:
-    msg: Cart
+    msg: {{COMPONENT}}
 - name: Install NodeJS Packages
   yum:
     name:
