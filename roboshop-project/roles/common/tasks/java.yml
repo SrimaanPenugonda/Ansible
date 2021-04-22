@@ -20,5 +20,11 @@
     cmd: mvn clean package
   become_user: roboshop
 
+- name: Copy {{COMPONENT}} Jar file
+  copy:
+    src: /home/roboshop/{{COMPONENT}}/target/{{COMPONENT}}-1.0.jar
+    dest: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.jar
+    remote_src: yes
+
 - name: Update Systemd.service file
   include_tasks: systemd-setup.yml
