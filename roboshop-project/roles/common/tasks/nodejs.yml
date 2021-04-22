@@ -1,3 +1,6 @@
+- name: Setup OS-prerequisites
+  include_tasks: os.yml
+
 - name: Install NodeJS Packages
   yum:
     name:

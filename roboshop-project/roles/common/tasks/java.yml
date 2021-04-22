@@ -1,6 +1,6 @@
-- name: Component name
-  debug:
-    msg: shipping
+- name: Setup OS-prerequisites
+  include_tasks: os.yml
+
 - name: Install maven Packages
   yum:
     name:
