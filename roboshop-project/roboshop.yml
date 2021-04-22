@@ -6,10 +6,10 @@
   tasks:
     - name: Load Frontend Role
       import_role:
-          name: frontend
-        when: component == "frontend"
-        tags:
-          - frontend
+        name: frontend
+      when: component == "frontend"
+      tags:
+        - frontend
 
     - name: Load Cart Role
       import_role: # this is playbook so to import role use import_role
