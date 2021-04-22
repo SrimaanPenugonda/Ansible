@@ -14,10 +14,10 @@
         name: cart
       when: component == "cart"
 
-#    - name: Load Catalogue Role
-#      import_role:
-#        name: catalogue
-#      when: component == "catalogue"  #variables in inventory file
+    - name: Load Catalogue Role
+      import_role:
+        name: catalogue
+      when: component == "catalogue"  #variables in inventory file
 #
 #    - name: Load User Role
 #      import_role:

@@ -1,3 +1,4 @@
-- name: Component name
-  debug:
-    msg: Catalogue
+- name: Include Common role
+  include_role:  #this is role to include role ina= a role include_role
+    name: common
+    tasks_from: nodejs
