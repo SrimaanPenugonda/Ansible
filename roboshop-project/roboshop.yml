@@ -5,7 +5,7 @@
   become: yes  #acts as sudo user ,it can be mention at task level also
   tasks:
     - name: Load Frontend Role
-        import_role:
+      import_role:
           name: frontend
         when: component == "frontend"
         tags:
