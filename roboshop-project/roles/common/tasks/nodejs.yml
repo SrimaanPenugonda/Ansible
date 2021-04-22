@@ -8,6 +8,7 @@
       - make
       - gcc-c++
     state: present
--name: Create Application User
+
+- name: Create Application User
   user:
     name: roboshop # no need to check user exits or not..Ansible just take it as command declarative and do
