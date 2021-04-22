@@ -4,10 +4,12 @@
     domain: devopssri.ml
   become: yes  #acts as sudo user ,it can be mention at task level also
   tasks:
-#    - name: Load Frontend Role
-#        name: frontend
-#        import_role:
-#        when: component == "frontend"
+    - name: Load Frontend Role
+        name: frontend
+        import_role:
+        when: component == "frontend"
+        tags:
+          - frontend
 
     - name: Load Cart Role
       import_role: # this is playbook so to import role use import_role
