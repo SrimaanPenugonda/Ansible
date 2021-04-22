@@ -8,7 +8,7 @@
 #        when: component == "frontend"
 
     - name: Load Cart Role
-      import_role:
+      import_role: # this is playbook so to import role use import_role
         name: cart
       when: component == "cart"
 

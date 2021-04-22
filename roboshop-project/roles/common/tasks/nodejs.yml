@@ -1,0 +1,13 @@
+- name: Component name
+  debug:
+    msg: Cart
+- name: Install NodeJS Packages
+  yum:
+    name:
+      - nodejs
+      - make
+      - gcc-c++
+    state: present
+-name: Create Application User
+  user:
+    name: roboshop # no need to check user exits or not..Ansible just take it as command declarative and do
