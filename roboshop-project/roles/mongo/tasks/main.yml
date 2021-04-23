@@ -7,7 +7,7 @@
 - name: Copy the mongo repo file
   template:
     src: mongo.repo
-    dest: etc/yum.repos.d/mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
 #
 #install mongodb
 - name: Install Mongodb
