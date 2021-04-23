@@ -41,7 +41,7 @@
   shell: mongo < /tmp/{{item}}.js
   loop:
     - catalogue
-    - user
+    - users
 #launch catalogue service now as mongodb is ready
 #nslookup dns record name
 
