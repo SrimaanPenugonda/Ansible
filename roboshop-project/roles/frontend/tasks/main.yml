@@ -27,6 +27,12 @@
 - name: Rename Content Directory
   shell: mv /usr/share/nginx/static /usr/share/nginx/html
 
+- name: Copy rhe roboshop.conf file
+  template:
+    src: roboshop.conf
+    dest: /etc/nginx/defaultd/roboshop.conf
+  notify: Restart Nginx
+
 - name: Start Nginx
   systemd:
     name: nginx
