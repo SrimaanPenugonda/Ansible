@@ -1,11 +1,6 @@
-
-[Unit]
-Description = {{COMPONENT}} Service
-[Service]
-User=roboshop
-Environment=MONGO_URL="mongodb://mongo-{{ENV}}.{{domain}}:27017/catalogue"
-ExecStart=/bin/node /home/roboshop/{{COMPONENT}}/server.js
-SyslogIdentifier={{COMPONENT}}
-
-[Install]
-WantedBy=multi-user.target
+[mongodb-org-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
