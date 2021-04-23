@@ -15,7 +15,7 @@
     name: mongodb-org
     state: present
 #
-#replace 127.0.0 in mongod.conf unsing replace module
+#replace 127.0.0 in mongod.conf using replace module
 - name: update mongo.conf file
   replace:
     path: /etc/mongod.conf

@@ -1,0 +1,41 @@
+#S33:
+- name: Include Common Role for OS Prereqs
+  include_role:
+    name: common
+    tasks_from: os
+
+#install redis
+- name: Install the repo file of redis
+  yum:
+    name: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+    state: present
+
+- name: Install Redis
+  yum:
+    name: redis
+    state: present
+    enablerepo: remi
+#
+#replace 127.0.0 in redis.conf using replace module
+- name: update redis.conf file
+  replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: update redis.conf file
+  replace:
+    path: /etc/redis/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+
+#restart the redis service by using systemd
+- name: Start the redis Service
+  systemd:
+    state: restarted
+    enabled: yes
+    name: redis
+
+
+
