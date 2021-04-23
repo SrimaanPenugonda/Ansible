@@ -25,9 +25,10 @@
 #restart the mangod service by systemd
 - name: Start the Mongod Service
   systemd:
-    name: mongod
-    enable: yes
     state: restarted
+    enabled: yes
+    name: mongod
+
 #downlad the artifacts
 - name: Download and Unarchive {{COMPONENT}} zip file
   ansible.builtin.unarchive:
