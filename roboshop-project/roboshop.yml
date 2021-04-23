@@ -45,3 +45,10 @@
       when: component == "payment"
       tags:
         - payment
+        -
+    - name: Load Mongo Role
+        import_role:
+          name: mongo
+        when: component == "mongo"
+        tags:
+          - mongo

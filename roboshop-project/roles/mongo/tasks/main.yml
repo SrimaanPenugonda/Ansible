@@ -1,0 +1,26 @@
+#S33:
+#copy mongo repo file using template
+#
+#install mongodb
+#
+#replace 127.0.0 in mongod.conf unsing replace module
+
+#restart the mangod service by systemd
+#
+#downlad the artifacts
+- name: Download and Unarchive {{COMPONENT}} zip file
+  ansible.builtin.unarchive:
+    src: "{{ARTIFACT_ZIP_URL}}"
+    dest: /tmp
+    remote_src: yes
+
+#load the schema now using shell using loop
+- name: Load the schema
+  shell: mongo < /tmp/{{item}}.js
+  loop:
+    - catalogue
+    - user
+#launch catalogue service now as mongodb is ready
+#nslookup dns record name
+
+
