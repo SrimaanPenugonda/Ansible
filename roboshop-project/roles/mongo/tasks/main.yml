@@ -26,7 +26,7 @@
 - name: Start the Mongod Service
   systemd:
     name: mongod
-    enable: true
+    enable: yes
     state: restarted
 #downlad the artifacts
 - name: Download and Unarchive {{COMPONENT}} zip file
