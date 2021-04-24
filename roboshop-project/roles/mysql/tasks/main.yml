@@ -48,3 +48,13 @@
   when: out.rc != 0
 #mysql -u root --connect-expired-password -p'{{DEFAULT_PWD.stdout}} this will login to mysql
 #after login we r changing the pwd to MYSQL_PASS
+
+#downlad the artifacts
+- name: Download and Unarchive {{COMPONENT}} zip file
+  ansible.builtin.unarchive:
+    src: "{{ARTIFACT_ZIP_URL}}"
+    dest: /tmp
+    remote_src: yes
+
+- name: Load Schema
+  shell: mysql -u root -p'{{MYSQL_PASS}}' </tmp/shipping.sql
