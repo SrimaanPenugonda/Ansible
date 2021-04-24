@@ -7,7 +7,7 @@
 #install Erlang
 - name: Install the repo file of erlang
   yum:
-    name: https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.1-1~centos~7_amd64.rpm
+    name: https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_23.3.1-1~centos~7_amd64.rpm
     state: present
 
 #Setup rabbitmq repo
