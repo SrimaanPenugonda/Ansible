@@ -19,7 +19,7 @@
 #install Mysql
 - name: Install Mysql
   yum:
-    name: mysql-community-server
+    name: mysql-server
     state: present
 
 #start the mysql
