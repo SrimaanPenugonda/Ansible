@@ -34,6 +34,7 @@
 - name: Check the mysql connectivity with MYSQL_PASS
   shell: echo "show databases;" | mysql -u root -p'{{MYSQL_PASS}}'
   register: out
+  ignore_errors: yes
 
 #Grep the default password from /var/log/mysqld.log
 - name: Grab the Default pwd
