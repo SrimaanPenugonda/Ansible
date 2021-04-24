@@ -55,7 +55,14 @@
 
     - name: Load redis Role
       import_role:
-          name: redis
+        name: redis
       when: component == "redis"
       tags:
-          - redis
+        - redis
+
+    - name: Load mysql Role
+      import_role:
+        name: mysql
+      when: component == "mysql"
+      tags:
+        - mysql

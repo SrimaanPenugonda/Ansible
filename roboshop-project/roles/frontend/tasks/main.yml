@@ -13,7 +13,7 @@
     path: /usr/share/nginx
     state: absent
 
-- name: Cretae content directory
+- name: Create content directory
   ansible.builtin.file:
     path: /usr/share/nginx
     state: directory

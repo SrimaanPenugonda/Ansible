@@ -1,0 +1,48 @@
+#S34:
+- name: Include Common Role for OS Prereqs
+  include_role:
+    name: common
+    tasks_from: os
+
+#copy the repo file using template
+- name: Copy mysql repo file
+  template:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+#Remove Mariadb if present
+- name: Remove Mariadb
+  yum:
+    name: mariadb-libs
+    state: absent
+
+#install Mysql
+- name: Install Mysql
+  yum:
+    name: mysql-community-server
+    state: present
+
+#start the mysql
+- name: Start the mysqld service
+  systemd:
+    name: mysqld
+    enable: yes
+    state: restarted
+#check the mysql connectivity with MYSQL_PASS ,if able to connect ignore the pwd reset
+#else do the pwd reset
+- name: Check the mysql connectivity with MYSQL_PASS
+  shell: echo "show databases;" | mysql -u root -p'{{MYSQL_PASS}}'
+  register: out
+
+#Grep the default password from /var/log/mysqld.log
+- name: Grab the Default pwd
+  shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}' #NF gives the last column
+  register: DEFAULT_PWD
+  when: out.rc != 0
+
+#reset the password
+- name: Set the new password
+  shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{MYSQL_PASS}}';\nuninstall plugin validate_password;" | mysql -u root --connect-expired-password -p'{{DEFAULT_PWD.stdout}}'
+  when: out.rc != 0
+#mysql -u root --connect-expired-password -p'{{DEFAULT_PWD.stdout}} this will login to mysql
+#after login we r changing the pwd to MYSQL_PASS
