@@ -26,8 +26,9 @@
 - name: Start the mysqld service
   systemd:
     name: mysqld
-    enable: yes
+    enabled: yes
     state: restarted
+
 #check the mysql connectivity with MYSQL_PASS ,if able to connect ignore the pwd reset
 #else do the pwd reset
 - name: Check the mysql connectivity with MYSQL_PASS
