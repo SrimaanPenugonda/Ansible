@@ -14,7 +14,7 @@
     name: roboshop # no need to check user exits or not..Ansible just take it as command declarative and do
 
 - name: Download the artifacts
-  include_tasks: download-artifacts.yml # this include other task in common role
+  include_tasks: download-az-artifacts.yml # this include other task in common role
 
 - name: Install Python Packages
   pip:
