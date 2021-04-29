@@ -1,1 +1,32 @@
-- name: Copy the Artifacts
+- name: Copy the azure CLI repo files
+  template:
+    src: az.repo
+    dest: /etc/yum.repos.d/azure-cli.repo
+
+- name: Install Azure CLI
+  yum:
+    name: azure-cli
+    state: present
+
+- name: Install the Azure DevOps extension for the Azure CLI
+  shell: az extension add --name azure-devops
+  become_user: roboshop
+
+- name: Setup PAT for AZ CLI
+  shell: echo {{PAT}} |az devops login
+  become_user: roboshop
+
+- name: Delete {{COMPONENT}} directory if it exist
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: absent
+
+- name: Cretae {{COMPONENT}} directory
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: directory
+  become_user: roboshop
+
+- name: Donwload the Artifacts
+  shell: az artifacts universal download --organization "https://dev.azure.com/srimaanaws2021/" --feed "srimaanaws2021" --name "{{component}}" --version "{{APP_ARTIFACT_VERSION}}" --path .
+  become_user: roboshop
