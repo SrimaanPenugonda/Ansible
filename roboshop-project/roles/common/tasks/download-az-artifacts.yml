@@ -28,5 +28,5 @@
   become_user: roboshop
 
 - name: Donwload the Artifacts
-  shell: az artifacts universal download --organization "https://dev.azure.com/srimaanaws2021/" --feed "srimaanaws2021" --name "{{component}}" --version "{{ARTIFACT_VERSION}}" --path .
+  shell: az artifacts universal download --organization "https://dev.azure.com/srimaanaws2021/" --feed "srimaanaws2021" --name "{{component}}" --version "{{APP_ARTIFACT_VERSION}}" --path .
   become_user: roboshop
