@@ -17,7 +17,7 @@
   become_user: roboshop
 
 - name: Delete {{COMPONENT}} directory if it exist
-  ansible.builtin.file: =
+  ansible.builtin.file:
     path: /home/roboshop/{{COMPONENT}}
     state: absent
 
