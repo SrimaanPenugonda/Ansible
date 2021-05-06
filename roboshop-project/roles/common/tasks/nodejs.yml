@@ -17,9 +17,12 @@
   include_tasks: download-az-artifacts.yml # this include other task in common role
 
 - name: Download Nodejs dependencies
-  npm:
-    path: /home/roboshop/{{COMPONENT}}
-    state: latest
+#  community.general.npm:
+#    path: /home/roboshop/{{COMPONENT}}
+#    state: latest
+  shell: npm install
+   args:
+     chdir: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
 - name: Update Systemd.service file
