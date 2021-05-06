@@ -17,7 +17,7 @@
   include_tasks: download-az-artifacts.yml # this include other task in common role
 
 - name: Download Nodejs dependencies
-  community.general.npm:
+  npm:
     path: /home/roboshop/{{COMPONENT}}
     state: latest
   become_user: roboshop
