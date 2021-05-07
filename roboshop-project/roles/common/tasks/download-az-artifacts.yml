@@ -8,6 +8,11 @@
     name: azure-cli
     state: present
 
+- name: Install libicu
+  yum:
+    name: libicu
+    state: present
+
 - name: Install the Azure DevOps extension for the Azure CLI
   shell: az extension add --name azure-devops
   become_user: roboshop
