@@ -20,7 +20,6 @@
   pip:
     requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
     executable: pip-3
-  become_user: roboshop
 
 - name: Update Systemd.service file
   include_tasks: systemd-setup.yml
