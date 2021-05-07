@@ -8,6 +8,7 @@
     name: azure-cli
     state: present
 
+#INSTALL libicu package install
 - name: Install libicu
   yum:
     name: libicu
