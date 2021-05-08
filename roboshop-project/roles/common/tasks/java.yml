@@ -14,17 +14,17 @@
 - name: Download the artifacts
   include_tasks: download-az-artifacts.yml # this include other task in common role
 
-- name: Compile & Build Package
-  shell:
-    chdir: /home/roboshop/{{COMPONENT}}
-    cmd: mvn clean package
-  become_user: roboshop
-
-- name: Copy {{COMPONENT}} Jar file
-  copy:
-    src: /home/roboshop/{{COMPONENT}}/target/{{COMPONENT}}-1.0.jar
-    dest: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.jar
-    remote_src: yes
+#- name: Compile & Build Package
+#  shell:
+#    chdir: /home/roboshop/{{COMPONENT}}
+#    cmd: mvn clean package
+#  become_user: roboshop
+#
+#- name: Copy {{COMPONENT}} Jar file
+#  copy:
+#    src: /home/roboshop/{{COMPONENT}}/target/{{COMPONENT}}-1.0.jar
+#    dest: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.jar
+#    remote_src: yes
 
 - name: Update Systemd.service file
   include_tasks: systemd-setup.yml
