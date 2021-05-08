@@ -1,4 +1,4 @@
-  - name: Setup OS-prerequisites
+- name: Setup OS-prerequisites
   include_tasks: os.yml
 
 - name: Install maven Packages
