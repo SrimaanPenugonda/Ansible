@@ -14,3 +14,6 @@ S32:
     include_role - defined for inside role to include another role
 8.include_tasks - call other tasks in that role
 9.become_user: root or roboshop
+
+
+qcgyof3rtbjwcp5cbyhk46kakzigftjnacbscnprmjle4rrguflq
