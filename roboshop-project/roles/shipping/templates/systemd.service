@@ -4,7 +4,7 @@ Description={{COMPONENT}} Service
 
 [Service]
 User=roboshop
-Environment=CART_ENDPOINT=cart-{{ENV}}.{{domain}}:8080
+Environment=CART_ENDPOINT=cart-{{ENV}}.{{domain}}:80
 Environment=DB_HOST=mysql-{{ENV}}.{{domain}}
 ExecStart=/bin/java -jar /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.jar
 SyslogIdentifier={{COMPONENT}}
