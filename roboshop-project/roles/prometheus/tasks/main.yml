@@ -1,0 +1,18 @@
+- name: Download and Unarchive node exporter
+  ansible.builtin.unarchive:
+    src: "{{NODE_EXPORT_URL}}"
+    dest: /opt
+    remote_src: yes
+
+- name: Copy node_exporter.service file
+  template:
+    src: node_exporter.service
+    dest: /etc/systemd/system
+  notify: Restart Node Exporter
+
+- name: Start Node Exporter
+  systemd:
+    name: node_exporter
+    daemon_reload: yes
+    state: started
+    enabled: yes

@@ -1,0 +1,2 @@
+NODE_EXPORT_URL: "https://github.com/prometheus/node_exporter/releases/download/v1.1.2/node_exporter-1.1.2.linux-amd64.tar.gz"
+NE_DIR: "/opt/{{ NODE_EXPORT_URL.split('/') | last | regex_replace('.tar.gz', '') }}"
