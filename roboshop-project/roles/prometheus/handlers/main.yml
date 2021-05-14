@@ -1,4 +1,4 @@
-- name: Restart Nginx
+- name: Restart Node Exporter
   systemd:
-    name: nginx
+    name: node_exporter
     state: restarted
