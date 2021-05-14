@@ -2,3 +2,7 @@
   include_role:  #this is role to include role ina= a role include_role
     name: common
     tasks_from: java
+
+- name: Include Prometheus Role
+  include_role:
+    name: prometheus
