@@ -6,6 +6,6 @@ for component in frontend catalogue cart user shipping payment mysql mongo rabbi
      '.Reservations[].Instances[].PrivateIpAddress' |xargs)       #xargs used to remove""
      if [ -n "${IP}" ];then
        echo ${component}
-       echo $IP component=${component} >>inventory
+       echo $IP component=${component} ansible_user=centos ansible_password=DevOps321 >>inventory
      fi
 done
