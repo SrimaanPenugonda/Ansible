@@ -6,18 +6,18 @@ filebeat.inputs:
   # you can use different inputs for various configurations.
   # Below are the input specific configurations.
 
-  - type: log
+- type: log
 
     # Change to true to enable this input configuration.
-    enabled: true
+   enabled: true
 
     # Paths that should be crawled and fetched. Glob based paths.
-    paths:
-  {% if COMPONENT == "frontend" %}
+   paths:
+{% if COMPONENT == "frontend" %}
       - /var/log/nginx/access.log
-    fields:
+   fields:
       app: {{COMPONENT}}
-  {%endif%}
+{%endif%}
 
 # ============================== Filebeat modules ==============================
 filebeat.config.modules:
