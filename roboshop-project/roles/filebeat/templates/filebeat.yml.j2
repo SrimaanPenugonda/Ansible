@@ -15,6 +15,8 @@ filebeat.inputs:
     paths:
   {% if COMPONENT == "frontend" %}
       - /var/log/nginx/access.log
+    fields:
+      app: {{COMPONENT}}
   {%endif%}
 
 # ============================== Filebeat modules ==============================
