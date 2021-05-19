@@ -1,3 +1,14 @@
+- name: Copy and Setup Rsyslog
+  copy:
+    src: roboshop.conf
+    dest: /etc/rsyslog.d/roboshop.conf
+
+- name: Restart rsyslog
+  systemd:
+    name: rsyslog
+    state: restarted
+    enabled: yes
+
 - name: Copy the systemd service file
   template:
     src: systemd.service
