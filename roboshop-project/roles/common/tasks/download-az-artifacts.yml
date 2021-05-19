@@ -27,7 +27,7 @@
     path: /home/roboshop/{{COMPONENT}}
     state: absent
 
-- name: Cretae {{COMPONENT}} directory
+- name: Create {{COMPONENT}} directory
   ansible.builtin.file:
     path: /home/roboshop/{{COMPONENT}}
     state: directory
