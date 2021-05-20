@@ -24,6 +24,8 @@ filebeat.inputs:
     - /var/log/payment.log
   fields:
     app: {{COMPONENT}}
+#only include log lines starting with timestamp
+  include_lines: ["^.[0-9]"]
 {%endif%}
 
 # ============================== Filebeat modules ==============================
