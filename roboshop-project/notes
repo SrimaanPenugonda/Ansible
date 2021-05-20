@@ -17,3 +17,6 @@ S32:
 
 
 qcgyof3rtbjwcp5cbyhk46kakzigftjnacbscnprmjle4rrguflq
+
+
+ansible-playbook -i inventory roboshop.yml -e COMPONENT=catalogue -e ENV=dev  -t catalogue
