@@ -82,5 +82,9 @@ check the 03-runtime
 Conditions:
 When: component = "user"
 
+-e COMPONENT=user should be in ansible-playbook command on cmd
+ansible -i inventory all -u root -k -m shell -a "systemctl enable filebeat;systemctl restart filebeat"
+ this will apply for all servers in inventory file...
+
 
 
