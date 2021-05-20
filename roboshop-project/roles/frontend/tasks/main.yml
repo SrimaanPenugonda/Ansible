@@ -27,10 +27,16 @@
 - name: Rename Content Directory
   shell: mv /usr/share/nginx/static /usr/share/nginx/html
 
-- name: Copy the roboshop.conf file
+- name: Copy the roboshop.conf file and update nginx configuration
   template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+  notify: Restart Nginx
+
+- name: Copy the nginx.conf file to update log format
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
   notify: Restart Nginx
 
 - name: Start Nginx
