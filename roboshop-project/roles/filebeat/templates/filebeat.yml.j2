@@ -16,6 +16,7 @@ filebeat.inputs:
     - /var/log/shipping.log
   fields:
     app: {{COMPONENT}}
+#each log line starts with 4 digit number
   multiline.pattern: "^[0-9][0-9][0-9][0-9]"
   multiline.negate: true
   multiline.match: after
