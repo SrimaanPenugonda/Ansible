@@ -19,10 +19,10 @@
     state: directory
 
 - name: Download and Unarchive {{COMPONENT}} zip file
-  ansible.builtin.unarchive:
+  ansible.builtin.git:
     src: "{{ARTIFACT_ZIP_URL}}"
     dest: /usr/share/nginx
-    remote_src: yes
+#    remote_src: yes
 
 - name: Rename Content Directory
   shell: mv /usr/share/nginx/static /usr/share/nginx/html
