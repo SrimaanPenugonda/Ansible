@@ -1,14 +1,14 @@
 - name: Setup Roboshop Project
   hosts: all
   vars:
-    domain: devopssri.ml
+    domain: devopssri.ml #Global variable
   become: yes  #acts as sudo user ,it can be mention at task level also
   tasks:
     - name: Load Frontend Role
       import_role:
         name: frontend
-      when: component == "frontend"
-      tags:
+      when: component == "frontend" #it selects only frontend host in inventory and skip remaining
+      tags:              # tags is to select only this task (-t frontend)
         - frontend
 
     - name: Load Cart Role
