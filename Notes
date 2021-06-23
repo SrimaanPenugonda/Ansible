@@ -41,7 +41,9 @@ ansible.builtin.shell - collections in ansible
 ansible -i inv all -u centos -m ansible.builtin.shell -a "hostname" -e "ansible_password=DevOps321"
     without asking pwd -> remove -k
 KEYS:
-    ssh keygen -f devops -> create keypair in devops direc
+    ssh keygen -f devops -> create keypair /in devops direc
+
+    ssh-copy-id -i ~/.ssh/devops user@host-  copy to ansible workstation
 
 
 Ansible PLAYBOOK - YAML Language used
